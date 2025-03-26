@@ -44,7 +44,7 @@ sequenceDiagram
     end
 
     
-    Worker ->> BinderDB: SELECT FROM 📋`vendor_data` get 🖊️`value`(amocrm_token_ts_upd)
+    Worker ->> BinderDB: SELECT FROM 📋`vendor_data` 🖊️`value`(amocrm_token_ts_upd)
     activate BinderDB
     BinderDB ->> Worker: Массив [vendor_id => amocrm_token_ts_upd,]
     activate Worker
