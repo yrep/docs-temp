@@ -43,7 +43,10 @@ sequenceDiagram
     participant AmocrmAPI
     end
 
-    
+    Worker ->> BinderDB: SELECT FROM 📋`vendor` 🖊️`type` = 'amocrm'
+    activate BinderDB
+    BinderDB ->> Worker: Массив вендоров amocrm
+    activate Worker
     Worker ->> BinderDB: SELECT FROM 📋`vendor_data` 🖊️`value`(amocrm_token_ts_upd)
     activate BinderDB
     BinderDB ->> Worker: Массив [vendor_id => amocrm_token_ts_upd,]
