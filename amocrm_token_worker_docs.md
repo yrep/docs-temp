@@ -53,7 +53,7 @@ sequenceDiagram
     activate Worker
     Worker -->> AmocrmAPI: Запрос нового Access Token
     AmocrmAPI -->> Worker: ответ JSON с новыми токенами
-    Worker --> BinderDB: UPDATE 🖊️`token` in 📋`vendor`
+    Worker -->> BinderDB: UPDATE 🖊️`token` in 📋`vendor`
 
     
 ```
